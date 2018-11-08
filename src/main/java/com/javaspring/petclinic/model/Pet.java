@@ -4,12 +4,7 @@ import javax.persistence.*;
 import java.util.Date;
 @Entity
 @Table(name = "t_pet")
-public class Pet {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "petClinicSeqGen")
-    @SequenceGenerator(name = "petClinicSeqGen",sequenceName = "petclinic_sequence")
-    private long id;
+public class Pet extends BaseEntity {
 
     @Column(name = "name")
     private String name;
@@ -20,14 +15,6 @@ public class Pet {
     @ManyToOne
     @JoinColumn(name = "owner_id")
     private Owner owner;
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -56,7 +43,7 @@ public class Pet {
     @Override
     public String toString() {
         return "Pet{" +
-                "id=" + id +
+                "id=" + getId() +
                 ", name='" + name + '\'' +
                 ", birthDate=" + birthDate +
                 ", owner=" + owner +

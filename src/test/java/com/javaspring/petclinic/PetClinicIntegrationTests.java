@@ -1,6 +1,7 @@
 package com.javaspring.petclinic;
 
 import com.javaspring.petclinic.model.Owner;
+import com.javaspring.petclinic.model.Vet;
 import com.javaspring.petclinic.service.PetClinicService;
 import org.hamcrest.MatcherAssert;
 import org.hamcrest.Matchers;
@@ -24,6 +25,11 @@ public class PetClinicIntegrationTests {
         List<Owner> owners = petClinicService.findOwners();
 
         MatcherAssert.assertThat(owners.size(), Matchers.equalTo(10));
+    }
 
+    @Test
+    public void testFindVets(){
+        List<Vet> vets = petClinicService.findVets();
+        MatcherAssert.assertThat(vets.size(),Matchers.equalTo(3));
     }
 }

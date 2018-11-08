@@ -12,12 +12,7 @@ import java.util.Set;
 @Entity
 @Table(name = "t_owner")
 @XmlRootElement
-public class Owner {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "petClinicSeqGen")
-    @SequenceGenerator(name = "petClinicSeqGen",sequenceName = "petclinic_sequence")
-    private long id;
+public class Owner extends BaseEntity{
 
     @Column(name = "first_name")
     @NotEmpty
@@ -29,14 +24,6 @@ public class Owner {
 
     @OneToMany(mappedBy = "owner")
     private Set<Pet> pets=new HashSet<>();
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public String getFirstName() {
         return firstName;
@@ -66,7 +53,7 @@ public class Owner {
     @Override
     public String toString() {
         return "Owner{" +
-                "id=" + id +
+                "id=" + getId() +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 '}';

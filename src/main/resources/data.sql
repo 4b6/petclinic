@@ -21,6 +21,10 @@ INSERT INTO t_owner (id,first_name,last_name) VALUES (8, 'Murat', 'Eski');
 INSERT INTO t_owner (id,first_name,last_name) VALUES (9, 'Davut', 'Saz');
 INSERT INTO t_owner (id,first_name,last_name) VALUES (10, 'Kadir', 'Mutlu');
 
+INSERT INTO t_vet (id,first_name,last_name) VALUES (1, 'Murat', 'Eski');
+INSERT INTO t_vet (id,first_name,last_name) VALUES (2, 'Davut', 'Saz');
+INSERT INTO t_vet (id,first_name,last_name) VALUES (3, 'Kadir', 'Mutlu');
+
 INSERT INTO t_pet (id,name,birth_date,owner_id) VALUES (1, 'Maviş', '2005-09-07', 1);
 INSERT INTO t_pet (id,name,birth_date,owner_id) VALUES (2, 'Donetello', '2008-08-06', 1);
 INSERT INTO t_pet (id,name,birth_date,owner_id) VALUES (3, 'Karabaş', '2001-04-17', 1);
